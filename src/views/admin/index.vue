@@ -6,6 +6,7 @@
         <el-popover :width="400">
           <template #reference>
             <span>照片作品</span>
+            
           </template>
           <div>okk</div>
         </el-popover>
