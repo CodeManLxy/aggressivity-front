@@ -59,7 +59,7 @@
           </ul>
           <el-button color="#ea4c89" class="pink_btn">筛选</el-button>
         </div>
-        <div class="img_list flex">
+        <div class="img_list">
           <div class="img_card" v-for="item in 11" :key="item">
             <img src="../../assets/images/banner.jpg" alt="" />
           </div>
@@ -206,16 +206,36 @@ const imgLableList = ref([
     }
   }
   .img_list {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    margin: 0 auto;
+    width: 100%;
+    @media screen and (max-width: 1200px) {
+      & {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      & {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media screen and (max-width: 644px) {
+      & {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
     .img_card {
-      width: 300px;
+      width: 100%;
       height: 300px;
       overflow: hidden;
       cursor: pointer;
       object-fit: cover;
-      margin: 20px 20px;
+      position: relative;
       img {
-        height: 100%;
+        width: 100%;
+        position: absolute;
       }
     }
   }
