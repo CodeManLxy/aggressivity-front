@@ -5,12 +5,12 @@ const adminChildren = Object.keys(childRoutesModule).reduce((children, key) => {
 }, []);
 
 export default [
-  // {
-  //   path: "/",
-  //   redirect: "/admin",
-  // },
   {
     path: "/",
+    redirect: "/dogs",
+  },
+  {
+    path: "/admin",
     name: "admin",
     component: () => import("@/views/admin/index.vue"),
     children: adminChildren,
@@ -22,5 +22,11 @@ export default [
     meta: {
       login: false,
     },
+  },
+  {
+    path: "/dogs",
+    name: "dogs",
+    component: () => import("@/views/dogs/index.vue"),
+    children: adminChildren,
   },
 ];

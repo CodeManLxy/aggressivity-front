@@ -8,6 +8,9 @@ import router from "./router";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
+// 引入字体样式
+// import "@/assets/font/font.css";
+import "./assets/font/font.css";
 
 const app = createApp(App);
 const pinia = createPinia();
